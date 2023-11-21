@@ -1,0 +1,10 @@
+.header {
+	text-align: center;
+	font-size: 1.25rem;
+	margin-bottom: 4rem;
+
+	&__logo {
+		width: clamp(15rem, 80vw, 23.125rem);
+		height: auto;
+	}
+}
