@@ -8,11 +8,16 @@ body {
 	font-family: 'Source Sans 3', sans-serif;;
 	background-color: var(--background-color);
 	color: var(--body-color);
-	padding: 4rem 1rem;
+	padding: 2rem 1rem;
 	height: 100vh;
 	background: 
 		linear-gradient(180deg, var(--background-color) 28.26%, rgba(20, 6, 11, 0.00) 100%), 
 		url(../assets/background.jpg);
 	background-position: center;
 	background-repeat: repeat;
+}
+
+img, svg {
+	height: auto;
+	max-width: 100%;
 }

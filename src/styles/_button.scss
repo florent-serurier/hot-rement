@@ -3,11 +3,11 @@
 	border: 4px solid currentColor;
 	background: var(--background-color);
 	display: inline-block;
-	padding: 0.25em 0.5em;
+	padding: 0.5em 0.75em;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: bold;
-	font-size: clamp(2rem, 13vw, 4rem);
+	font-size: clamp(2rem, 6vh, 4rem);
 	line-height: 1.2;
 
 	&__count {
@@ -18,7 +18,7 @@
 	}
 
 	&--small {
-		font-size: 2rem;
+		font-size: clamp(1rem, 4vh, 3rem);
 		padding: .5em 1em;
 		border-width: 2px;
 	}
@@ -27,7 +27,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
 		margin-bottom: 2rem;
     }
 

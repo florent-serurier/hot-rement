@@ -33,10 +33,14 @@ export default function Popup({item, cbClose}: PopupProps) {
     }
 
     return <>{item && <div className={'popup ' + className} onAnimationEnd={togglePopup}>
-        <div className="popup__content">
-            <Logo className="popup__logo" />
-            <p className="popup__text">{item.label}</p>
-            {item.gif && <img className="popup__gif" src={item.gif} />}
+        <div className="popup__container">
+            <div className="popup__logo">
+                <Logo />
+            </div>
+            <div className="popup__content">
+                <p className="popup__text">{item.label}</p>
+                {item.gif && <img className="popup__gif" src={item.gif} />}
+            </div>
             <a className="button-2" onClick={handleClose} href="#">Fermer</a>
         </div>
     </div>}</>;

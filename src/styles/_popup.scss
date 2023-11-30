@@ -6,12 +6,15 @@
     inset: 0;
     background-color: rgba(0,0,0,0.5);
 
-    &__content {
-        display: block;
-        width: 80vw;
-        height: 90vh;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 90vw;
+        height: 95vh;
         background-color: var(--background-color);
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
         position: absolute;
         text-align: center;
         left: 50%;
@@ -21,21 +24,32 @@
     }
 
     &__logo {
-        width: 9.625rem;
-        height: 9.625rem;
-        margin-bottom: 4rem;
+        aspect-ratio: 1 / 1;
+        height: clamp(6rem, 10vh ,9.625rem);
+        flex: 1 0 auto;
+    }
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
     }
 
     &__text {
-        margin-bottom: 4rem;
-        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        font-size: clamp(0.85rem, 2.5vh, 1.25rem);
+        line-height: 1.2;
         font-weight: bold;
         text-transform: uppercase;
     }
 
     &__gif {
         width: 100%;
-        margin-bottom: 4rem;
+        aspect-ratio: 4/3;
+        object-fit: contain;
     }
 
     &__close {
