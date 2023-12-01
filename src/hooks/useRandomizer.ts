@@ -1,16 +1,12 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import { getRandomInt } from "../func/helper";
 import { BaseType, StorageName } from "../type";
+import { useLocalStorage } from './useLocalStorage';
 
 export function useRandomizer(items:BaseType[], storage:StorageName)
 {
-    const [itemsAlreadyUsed, setItemsAlreadyUsed] = useState<BaseType[]>([]);
+    const [itemsAlreadyUsed, setItemsAlreadyUsed] = useLocalStorage<BaseType[]>(storage, []);
     const [randomItem, setRandomItem] = useState<BaseType>();
-    
-    useEffect(() => {
-        const storageItems = localStorage.getItem(storage);
-        setItemsAlreadyUsed(storageItems !== null ? JSON.parse(storageItems) : []);
-    }, []);
 
     const getRandomItem = () => {
         const itemsUnused = items.filter((_q) => {
