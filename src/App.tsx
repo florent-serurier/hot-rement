@@ -3,10 +3,13 @@ import { Logo } from "./components/Logo";
 import { useQuestions } from "./hooks/useQuestions";
 import Popup from './components/Popup';
 import { usePunitions } from "./hooks/usePunitions";
+import audioFouetPath from "./assets/fouet.mp3";
+import { useAudio } from "./hooks/useAudio";
 
 function App() {
     const {getRandomQuestion, randomQuestion, resetRandomQuestion, questionsAlreadyUsed, resetQuestions, questions} = useQuestions();
     const {getRandomPunition, randomPunition, resetRandomPunition, punitionsAlreadyUsed, resetPunitions, punitions} = usePunitions();
+    const {playAudio} = useAudio(audioFouetPath);
 
     const handleReset = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
@@ -23,7 +26,8 @@ function App() {
     }
 
     const handleGetPunition = (e: React.MouseEvent<HTMLElement>) => {
-        e.preventDefault(); 
+        e.preventDefault();
+        playAudio();
         getRandomPunition();
     }
 

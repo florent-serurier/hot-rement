@@ -77,8 +77,6 @@ export function useQuestions(): {
         resetRandomItem : resetRandomQuestion,
     } = useRandomizer(questions, StorageName.QUESTION);
 
-
-
     return {
         questions, 
         randomQuestion, 
